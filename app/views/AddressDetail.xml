@@ -1,0 +1,7 @@
+<Alloy>
+	<!--<View class="container"></View>-->
+	<Collection src="Venue"/>
+	<Window title="map" id="win">
+		<Module id="mapView" module="ti.map" method="createView" userLocation="true" dataCollection="Venue" dataFilter="filterFunction" dataTransform="transformFunction" />
+	</Window>
+</Alloy>

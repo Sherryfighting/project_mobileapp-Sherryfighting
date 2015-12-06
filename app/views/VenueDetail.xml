@@ -1,0 +1,12 @@
+<Alloy>
+	<!--<View class="container"></View>-->
+	<Collection src="webNews"/>
+	<Collection src="Venue"/>
+	<Window id='win'>
+		<TableView dataCollection="webNews" dataFilter="filterFunction" onClick="tableClick6">
+			<TableViewSection headerTitle="">
+				<TableViewRow title="{name}" fid="{id}"/>
+			</TableViewSection>			
+		</TableView>
+	</Window>
+</Alloy>

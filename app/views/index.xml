@@ -1,0 +1,71 @@
+<Alloy>
+	<Collection src="webNews" />
+	<Collection src="Venue" />
+	<TabGroup>
+		<Tab title="News" id="NewsTab" icon="KS_nav_ui.png">
+			<Window title="News">
+				<TableView dataCollection="webNews" onClick="tableClick1" >
+					<TableViewRow layout="vertical" fid="{id}">
+						<ImageView image="{image}" top="20dp" />
+						<Label  text="{name}" bottom="20dp" />
+					</TableViewRow>
+				</TableView>
+			</Window>
+		</Tab>
+		
+		
+		<Tab title="Organizer" id="OrganizerTab" icon="KS_nav_ui.png">
+		   <Window title="Organizer">
+				<TableView dataCollection="webNews">
+						<TableViewSection headerTitle="">
+							<TableViewRow title="{organizer}" onClick="tableClick3" fid="{organizer}"/>
+						</TableViewSection>
+				</TableView>
+			</Window>
+		</Tab>
+		
+		<Tab titLe="Facilities" id="FacilitiesTab" icon="KS_nav_views.png">
+			<Window title="Facilities">
+				<TableView dataCollection="Venue" dataTransform="transformFunction1" >
+					<TableViewSection headerTitle="{thumbnail}">
+						<TableViewRow title="{VenueName}" onClick="tableClick5" fid="{VenueID}"></TableViewRow>
+					</TableViewSection>
+				</TableView>
+			</Window>
+		</Tab>
+		
+		<Tab title="Map" id="MapTab" icon="KS_nav_ui.png">
+			<Window title="Map" navBarHidden="true">
+				<Module id="mapView" module="ti.map" method="createView" userLocation="true" dataCollection="Venue" dataTransform="transformFunction" onClick="mapClicked">
+					<!--<Annotation id='acHall' />
+					<Annotation id='waiHang' /> 
+					<Button title="Move" bottom="10dp" onClick="btClick" />-->
+				</Module>
+			</Window>
+		</Tab>
+		
+		<Tab title="AboutUs"  id="AboutUsTab" icon="KS_nav_ui.png">
+			
+			<Window title="log in">
+				<TableView >
+					<TableViewSection headerTitle="">
+						<TableViewRow title="login in" onClick="tableClick7" fid="login" />
+					</TableViewSection>
+					<TableViewSection headerTitle="">
+						<TableViewRow title="Registered Event" onClick="tableClick8" fid="Event" />
+					</TableViewSection>
+					<TableViewSection headerTitle="About HKBU">
+						<TableViewRow>
+							<TextArea value = "Hong Kong Baptist University (HKBU) is a publicly funded tertiary institution with a Christian education heritage \n" />
+						</TableViewRow>
+					</TableViewSection>
+					<TableViewSection headerTitle="">
+						<TableViewRow>
+							<TextArea id="textArea2"></TextArea>
+						</TableViewRow>
+					</TableViewSection>
+				</TableView>
+			</Window>
+		</Tab>
+	</TabGroup>
+</Alloy>

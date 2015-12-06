@@ -1,0 +1,20 @@
+<Alloy>
+	<!--<View class="container"></View>-->
+	<Collection src="webNews" />
+	<Collection src="Venue"/>
+	<Collection src="events"/>
+	<Collection src="registeredevent"/>
+	<Window title="NewsDetail" id='win'>
+		<RightNavButton>
+			<Button title="Reg" onClick="tableClick2" fid="Event"/>
+		</RightNavButton>
+		<AlertDialog id="dialog" onClick="sureClick">	
+		<TableView dataCollection="webNews" dataFilter="filterFunction" dataTransform="transformFunction">
+			<TableViewRow layout="vertical" target="{venue}">
+				<ImageView image="{image}" top="20dp" />
+				<Label text="{fullDes}" bottom="20dp"/>
+				<Button title="Address" bottom="10dp" target="{venue}" id="aButton" onClick="tableClick4"  />
+			</TableViewRow>
+		</TableView>
+	</Window>
+</Alloy>
